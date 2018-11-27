@@ -1,11 +1,14 @@
 var path = require('path');
- var webpack = require('webpack');
+var webpack = require('webpack');
 
  module.exports = {
-     entry: './js/main.js',
+     entry: {
+        app: './js/main.js',
+        ratefinder: './js/ratefinder.js'
+     },
      output: {
-         path: path.resolve(__dirname, 'build'),
-         filename: 'main.bundle.js'
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].bundle.js'
      },
      module: {
          rules: [
@@ -24,10 +27,11 @@ var path = require('path');
      stats: {
          colors: true
      },
-     devtool: 'source-map'
+     devtool: 'source-map',
+     mode: 'development'
  };
 
-
+ 
 
     
     
